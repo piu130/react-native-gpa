@@ -1,5 +1,6 @@
+import { combineReducers } from 'redux'
 import entities from './entities'
 
-export default {
+export default combineReducers({
   entities
-}
+})

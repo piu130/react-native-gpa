@@ -11,6 +11,8 @@
     "test": "neutrino test"
   },
   "dependencies": {
+    "connected-react-router": "^4.4.1",
+    "history": "^4.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-art": "^16.4.2",
@@ -20,6 +22,7 @@
     "react-native-vector-icons": "^4.2.0",
     "react-native-web": "^0.8.9",
     "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",

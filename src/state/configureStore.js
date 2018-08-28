@@ -1,10 +1,11 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/es/storage'
+import { connectRouter, routerMiddleware } from 'connected-react-router'
 import createMiddleware from './middleware'
 import reducers from './ducks'
 
-export default (initialState, customReducers, customMiddleware) => {
+export default ({ history }) => {
   const store = createStore(
     persistReducer(
       {
@@ -13,10 +14,10 @@ export default (initialState, customReducers, customMiddleware) => {
         version: 1,
         blacklist: ['ui']
       },
-      combineReducers({ ...reducers, ...customReducers })
+      connectRouter(history)(reducers)
     ),
-    initialState,
-    compose(applyMiddleware(...createMiddleware(), ...customMiddleware))
+    undefined,
+    compose(applyMiddleware(...createMiddleware(), routerMiddleware(history)))
   )
 
   const persistor = persistStore(store)
