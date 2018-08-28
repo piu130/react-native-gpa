@@ -1,23 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, Text } from 'react-native-web'
-import { SemestersPageHeader } from '.'
-import { semestersSelectors } from '../../state/ducks/entities/semesters'
+import { View } from 'react-native-web'
+import { SemestersList, SemestersPageHeader } from '.'
 
 export class SemestersPage extends Component {
   render () {
     return (
       <View>
         <SemestersPageHeader />
-        <Text>Testerli</Text>
+        <SemestersList />
       </View>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  semesters: semestersSelectors.getAll(state)
-})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 

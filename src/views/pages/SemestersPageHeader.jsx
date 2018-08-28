@@ -17,7 +17,7 @@ export class SemestersPageHeader extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state, ownProps) => ({})
 
 const mapDispatchToProps = {}
 
