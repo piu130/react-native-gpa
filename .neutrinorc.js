@@ -14,6 +14,7 @@ module.exports = {
       }
     ],
     (neutrino) => {
+      neutrino.config.resolve.extensions.prepend('.web.js')
       neutrino.config.module
         .rule('compile')
           .include
