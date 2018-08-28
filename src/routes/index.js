@@ -1,9 +1,9 @@
-import { View, Text } from 'react-native-web'
+import { SemestersPage } from '../views/pages'
 
 export default [
   {
     path: '/',
-    component: () => (<View><Text>Hellou</Text></View>),
+    component: SemestersPage,
     exact: true
   }
 ]
