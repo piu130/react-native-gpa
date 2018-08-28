@@ -7,6 +7,7 @@
     "build": "neutrino build",
     "start": "neutrino start",
     "lint": "neutrino lint",
+    "lint:fix": "neutrino lint --fix",
     "test": "neutrino test"
   },
   "dependencies": {
@@ -15,7 +16,7 @@
     "react-art": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-hot-loader": "^4.3.5",
-    "react-native-elements": "^1.0.0-beta5",
+    "react-native-elements": "1.0.0-beta5",
     "react-native-vector-icons": "^4.2.0",
     "react-native-web": "^0.8.9"
   },
