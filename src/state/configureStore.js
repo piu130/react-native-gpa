@@ -22,6 +22,6 @@ export default ({ history }) => {
 
   const persistor = persistStore(store)
 
-  persistor.purge()
+  // persistor.purge()
   return { persistor, store }
 }

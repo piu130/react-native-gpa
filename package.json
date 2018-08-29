@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "connected-react-router": "^4.4.1",
+    "cuid": "^2.1.4",
     "history": "^4.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
@@ -25,6 +26,7 @@
     "react-router": "^4.3.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
+    "redux-orm": "^0.12.1",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^3.0.1"
