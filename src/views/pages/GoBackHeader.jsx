@@ -19,12 +19,13 @@ export class SemestersPageHeader extends Component {
   }
 
   render () {
-    const { ...rest } = this.props
+    const { leftComponent, ...rest } = this.props
     return (
       <Header
         leftComponent={{
           icon: 'arrow-back',
-          onPress: this.onBackPress
+          onPress: this.onBackPress,
+          ...leftComponent
         }}
         {...rest}
       />
