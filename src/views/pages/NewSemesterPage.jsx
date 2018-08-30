@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Input } from 'react-native-elements'
-import { NewSemesterPageHeader, MainView as View } from '.'
+import { NewSemesterPageHeader, SemesterForm, MainView as View } from '.'
 import { actions as duckActions } from '../../state/ducks'
 import { editSemester } from '../../state/ducks/ui'
 
@@ -21,23 +20,16 @@ export class NewSemesterPage extends Component {
   }
 
   render () {
-    const { semester } = this.props
-    console.log(semester)
     return (
       <View>
         <NewSemesterPageHeader />
-        <Input
-          placeholder='name'
-          value={semester.name || ''}
-        />
+        <SemesterForm />
       </View>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  semester: editSemester.selectors.get(state)
-})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {
   create: editSemester.actions.create,
