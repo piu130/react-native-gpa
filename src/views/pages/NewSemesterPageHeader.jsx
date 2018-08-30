@@ -10,6 +10,9 @@ export class NewSemesterPageHeader extends Component {
 
     return (
       <GoBackHeader
+        leftComponent={{
+          icon: 'clear'
+        }}
         centerComponent={{
           text: 'Semester'
         }}

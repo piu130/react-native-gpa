@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { FlatList } from 'react-native-web'
-import { ListItem } from 'react-native-elements'
+import { SemesterListItem } from '.'
 import { selectors } from '../../state/ducks/entities'
 
 export class SemestersList extends Component {
@@ -12,10 +12,7 @@ export class SemestersList extends Component {
       <FlatList
         data={Object.values(semesters)}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => <ListItem
-          title={item.name}
-          onPress={() => console.log('blubb')}
-        />}
+        renderItem={({ item }) => <SemesterListItem semester={item} />}
       />
     )
   }

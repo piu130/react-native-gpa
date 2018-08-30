@@ -9,6 +9,7 @@ export class SemesterForm extends Component {
 
     return (
       <Input
+        autoFocus
         placeholder='name'
         value={semester.name || ''}
         onChangeText={changeName}
