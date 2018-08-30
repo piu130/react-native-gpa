@@ -11,7 +11,7 @@ export class AddSemesterButton extends Component {
       <Icon
         reverse
         name='add'
-        onPress={() => push('/newSemester')}
+        onPress={() => push('/semester/create')}
         containerStyle={{ position: 'absolute', bottom: 10, right: 10 }}
       />
     )

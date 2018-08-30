@@ -7,6 +7,11 @@ export default [
     exact: true
   },
   {
+    path: '/semester/:action/:id?',
+    component: NewSemesterPage,
+    exact: true
+  },
+  {
     path: '/newSemester',
     component: NewSemesterPage,
     exact: true
