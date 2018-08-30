@@ -1,5 +1,5 @@
 import { Model, attr, many } from 'redux-orm'
-import { CREATE } from './types'
+import { CREATE, UPSERT } from './types'
 
 export default class Semester extends Model {
   static modelName = 'Semester'
@@ -14,6 +14,9 @@ export default class Semester extends Model {
     switch (type) {
       case CREATE:
         Semester.create(payload)
+        break
+      case UPSERT:
+        Semester.upsert(payload)
         break
     }
     return undefined

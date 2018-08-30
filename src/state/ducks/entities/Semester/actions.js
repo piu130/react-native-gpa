@@ -1,5 +1,5 @@
 import cuid from 'cuid'
-import { CREATE } from './types'
+import { CREATE, UPSERT } from './types'
 
 export const create = semester => ({
   type: CREATE,
@@ -7,4 +7,9 @@ export const create = semester => ({
     id: cuid(),
     ...semester
   }
+})
+
+export const upsert = semester => ({
+  type: UPSERT,
+  payload: semester
 })

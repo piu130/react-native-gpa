@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import * as actions from './actions'
+import * as duckActions from './actions'
 import entities from './entities'
 import ui from './ui'
 
 export {
-  actions
+  duckActions
 }
 
 export default combineReducers({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NewSemesterPageHeader, SemesterForm, MainView as View } from '.'
-import { actions as duckActions } from '../../state/ducks'
+import { duckActions } from '../../state/ducks'
 import { editSemester } from '../../state/ducks/ui'
 
 export class NewSemesterPage extends Component {
