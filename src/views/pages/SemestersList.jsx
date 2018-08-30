@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { FlatList } from 'react-native-web'
 import { ListItem } from 'react-native-elements'
-import { semestersSelectors } from '../../state/ducks/entities/semesters'
+import { selectors } from '../../state/ducks/entities'
 
 export class SemestersList extends Component {
   render () {
     const { semesters } = this.props
-    console.log(Object.values(semesters))
+
     return (
       <FlatList
         data={Object.values(semesters)}
@@ -22,7 +22,7 @@ export class SemestersList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  semesters: semestersSelectors.getAll(state)
+  semesters: selectors.semesters(state)
 })
 
 const mapDispatchToProps = {}

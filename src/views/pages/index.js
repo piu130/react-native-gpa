@@ -1,3 +1,8 @@
+export { default as AddSemesterButton } from './AddSemesterButton'
+export { default as GoBackHeader } from './GoBackHeader'
+export { default as MainView } from './MainView'
+export { default as NewSemesterPage } from './NewSemesterPage'
+export { default as NewSemesterPageHeader } from './NewSemesterPageHeader'
 export { default as SemestersList } from './SemestersList'
 export { default as SemestersPage } from './SemestersPage'
 export { default as SemestersPageHeader } from './SemestersPageHeader'

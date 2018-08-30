@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View } from 'react-native-web'
-import { SemestersList, SemestersPageHeader } from '.'
+import { SemestersList, SemestersPageHeader, AddSemesterButton, MainView as View } from '.'
 
 export class SemestersPage extends Component {
   render () {
@@ -9,6 +8,7 @@ export class SemestersPage extends Component {
       <View>
         <SemestersPageHeader />
         <SemestersList />
+        <AddSemesterButton />
       </View>
     )
   }
