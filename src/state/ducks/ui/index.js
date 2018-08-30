@@ -1,10 +1,17 @@
 import { combineReducers } from 'redux'
-import editSemesterReducer, * as editSemester from './editSemester'
+import * as uiActions from './actions'
+import * as uiSelectors from './selectors'
+import semesterReducer, * as semester from './semester'
+import subjectReducer, * as subject from './subject'
 
 export {
-  editSemester
+  uiActions,
+  uiSelectors,
+  semester,
+  subject
 }
 
 export default combineReducers({
-  editSemester: editSemesterReducer
+  semester: semesterReducer,
+  subject: subjectReducer
 })

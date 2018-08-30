@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Input } from 'react-native-elements'
-import { editSemester } from '../../state/ducks/ui'
+import { semester as uiSemester } from '../../state/ducks/ui'
 
 export class SemesterForm extends Component {
   render () {
-    const { semester, changeName } = this.props
+    const { semester, changeProperty } = this.props
 
     return (
       <Input
         autoFocus
         placeholder='name'
         value={semester.name || ''}
-        onChangeText={changeName}
+        onChangeText={text => changeProperty('name', text)}
       />
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  semester: editSemester.selectors.get(state)
+  semester: uiSemester.selectors.get(state)
 })
 
 const mapDispatchToProps = {
-  changeName: editSemester.actions.changeName
+  changeProperty: uiSemester.actions.changeProperty
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SemesterForm)

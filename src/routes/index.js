@@ -1,19 +1,29 @@
-import { SemestersPage, NewSemesterPage } from '../views/pages'
+import { SemestersPage, EditPage } from '../views/pages'
 
 export default [
   {
-    path: '/',
+    path: '/(semesters)?',
     component: SemestersPage,
     exact: true
   },
   {
-    path: '/semester/:action/:id?',
-    component: NewSemesterPage,
-    exact: true
-  },
-  {
-    path: '/newSemester',
-    component: NewSemesterPage,
+    path: '/:entity/:action/:id?',
+    component: EditPage,
     exact: true
   }
+  // {
+  //   path: '/semester/:action/:id?',
+  //   component: EditSemesterPage,
+  //   exact: true
+  // },
+  // {
+  //   path: '/subjects/:id?',
+  //   component: SubjectsPage,
+  //   exact: true
+  // },
+  // {
+  //   path: '/subject/:action/:id?',
+  //   component: EditSemesterPage,
+  //   exact: true
+  // }
 ]

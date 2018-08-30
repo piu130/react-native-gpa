@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { SemestersList, SemestersPageHeader, AddSemesterButton, MainView as View } from '.'
+import { SemestersList, SemestersPageHeader, AddButton, MainView as View } from '.'
 
 export class SemestersPage extends Component {
   render () {
@@ -8,7 +8,7 @@ export class SemestersPage extends Component {
       <View>
         <SemestersPageHeader />
         <SemestersList />
-        <AddSemesterButton />
+        <AddButton path='/semester/create' />
       </View>
     )
   }
