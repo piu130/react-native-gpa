@@ -1,9 +1,12 @@
 import { CREATE, SET, REMOVE, CHANGE_PROPERTY } from './types'
 import cuid from 'cuid'
 
-export const create = () => ({
+export const create = semesterId => ({
   type: CREATE,
-  payload: { id: cuid() }
+  payload: {
+    id: cuid(),
+    semesterId
+  }
 })
 
 export const set = subject => ({
