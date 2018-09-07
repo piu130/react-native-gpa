@@ -1,0 +1,27 @@
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { List, ListPageHeader, AddButton, MainView as View } from '.'
+import { ucFirst } from '../../state/utils'
+
+export class ListPage extends Component {
+  render () {
+    const { match } = this.props
+    const { id, entity } = match.params
+    let path = `/${entity.slice(0, -1)}/create`
+    path += id ? `/${id}` : ''
+
+    return (
+      <View>
+        <ListPageHeader title={ucFirst(entity)} />
+        <List id={id} entityName={entity} />
+        <AddButton path={path} />
+      </View>
+    )
+  }
+}
+
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListPage)

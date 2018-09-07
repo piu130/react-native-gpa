@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { Provider } from 'react-redux'
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter } from 'connected-react-router'
-import { Route, Switch } from 'react-router'
+import { Route, Switch, Redirect } from 'react-router'
 import { configure } from './config'
 import routes from './routes'
 import { PersistGate } from 'redux-persist/es/integration/react'
@@ -21,6 +21,7 @@ export default class App extends Component {
         <PersistGate persistor={persistor}>
           <ConnectedRouter history={history}>
             <Switch>
+              <Route exact path='/' render={() => <Redirect to='/semesters' />} />
               {routes.map((route) => (
                 <Route key={route.path} {...route} />
               ))}

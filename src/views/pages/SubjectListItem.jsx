@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { ListItem } from 'react-native-elements'
 import { push } from 'connected-react-router'
 
-export class SemestersList extends Component {
+export class SubjectListItem extends Component {
   render () {
     const { item, push } = this.props
     const { id, name } = item
@@ -11,8 +11,8 @@ export class SemestersList extends Component {
     return (
       <ListItem
         title={name}
-        onLongPress={() => push(`/semester/edit/${id}`)}
-        onPress={() => push(`/subjects/${id}`)}
+        onLongPress={() => push(`/subject/edit/${id}`)}
+        // onPress={() => push(`/subjects/${id}`)}
       />
     )
   }
@@ -24,4 +24,4 @@ const mapDispatchToProps = {
   push
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SemestersList)
+export default connect(mapStateToProps, mapDispatchToProps)(SubjectListItem)

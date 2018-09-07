@@ -1,6 +1,6 @@
-import { CREATE } from './types'
+import { UPSERT } from './types'
 
-export const create = subject => ({
-  type: CREATE,
+export const upsert = subject => ({
+  type: UPSERT,
   payload: subject
 })

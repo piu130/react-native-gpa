@@ -1,18 +1,21 @@
-import { Model, attr } from 'redux-orm'
-import { CREATE } from './types'
+import { Model, attr, fk } from 'redux-orm'
+import { UPSERT } from './types'
 
 export default class Subject extends Model {
   static modelName = 'Subject'
 
   static fields = {
     id: attr(),
-    name: attr()
+    name: attr(),
+    semester: fk('Semester', 'subjects')
   }
 
   static reducer ({ type, payload }, Subject, session) {
+    if (!payload) return undefined
+    const { parentId, ...subject } = payload
     switch (type) {
-      case CREATE:
-        Subject.create(payload)
+      case UPSERT:
+        Subject.upsert({ semester: parentId, ...subject })
         break
     }
     return undefined

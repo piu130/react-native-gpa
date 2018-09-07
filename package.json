@@ -11,6 +11,7 @@
     "test": "neutrino test"
   },
   "dependencies": {
+    "capitalize": "^1.0.0",
     "connected-react-router": "^4.4.1",
     "cuid": "^2.1.4",
     "history": "^4.7.2",

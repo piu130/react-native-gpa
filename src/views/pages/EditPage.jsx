@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { EditPageHeader, SemesterForm, MainView as View } from '.'
+import { Route } from 'react-router'
+import { EditPageHeader, SemesterForm, SubjectForm, MainView as View } from '.'
+import { ucFirst } from '../../state/utils'
 import { duckActions } from '../../state/ducks'
 import { uiActions } from '../../state/ducks/ui'
 
@@ -11,7 +13,7 @@ export class EditPage extends Component {
     const { action, id } = match.params
     switch (action) {
       case 'create':
-        create()
+        create(id ? { parentId: id } : undefined)
         break
       case 'edit':
         load(id)
@@ -27,9 +29,10 @@ export class EditPage extends Component {
       <View>
         <EditPageHeader
           entity={entity}
-          title={entity[0].toUpperCase() + entity.slice(1)}
+          title={ucFirst(entity)}
         />
-        <SemesterForm />
+        <Route path='/semester/:action' component={SemesterForm} />
+        <Route path='/subject/:action' component={SubjectForm} />
       </View>
     )
   }
@@ -40,7 +43,7 @@ const mapStateToProps = (state) => ({})
 const mapDispatchToProps = (dispatch, ownProps) => {
   const entityName = ownProps.match.params.entity
   return ({
-    create: () => dispatch(uiActions.create(entityName)),
+    create: params => dispatch(uiActions.create(entityName, params)),
     load: id => dispatch(duckActions.load(entityName, id))
   })
 }

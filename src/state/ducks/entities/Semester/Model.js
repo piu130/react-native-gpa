@@ -1,4 +1,4 @@
-import { Model, attr, many } from 'redux-orm'
+import { Model, attr } from 'redux-orm'
 import { CREATE, UPSERT } from './types'
 
 export default class Semester extends Model {
@@ -6,8 +6,7 @@ export default class Semester extends Model {
 
   static fields = {
     id: attr(),
-    name: attr(),
-    subjects: many('Subject', 'semester')
+    name: attr()
   }
 
   static reducer ({ type, payload }, Semester, session) {

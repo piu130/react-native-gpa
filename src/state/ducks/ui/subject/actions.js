@@ -5,7 +5,7 @@ export const create = semesterId => ({
   type: CREATE,
   payload: {
     id: cuid(),
-    semesterId
+    parentId: semesterId
   }
 })
 
