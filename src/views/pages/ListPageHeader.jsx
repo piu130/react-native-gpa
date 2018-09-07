@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Header } from 'react-native-elements'
+import { GoBackHeader } from '.'
 
 export class ListPageHeader extends Component {
   render () {
-    const { title } = this.props
-
+    const { title, router } = this.props
+    console.log(router)
     return (
-      <Header
+      <GoBackHeader
         centerComponent={{
           text: title
         }}
@@ -19,7 +19,9 @@ export class ListPageHeader extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({})
+const mapStateToProps = (state, ownProps) => ({
+  router: state.router
+})
 
 const mapDispatchToProps = {}
 

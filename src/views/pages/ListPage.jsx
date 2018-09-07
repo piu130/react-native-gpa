@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import capitalize from 'capitalize'
 import { List, ListPageHeader, AddButton, MainView as View } from '.'
-import { ucFirst } from '../../state/utils'
 
 export class ListPage extends Component {
   render () {
@@ -12,7 +12,7 @@ export class ListPage extends Component {
 
     return (
       <View>
-        <ListPageHeader title={ucFirst(entity)} />
+        <ListPageHeader title={capitalize(entity)} />
         <List id={id} entityName={entity} />
         <AddButton path={path} />
       </View>

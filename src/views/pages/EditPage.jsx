@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import capitalize from 'capitalize'
 import { EditPageHeader, EditForm, MainView as View } from '.'
-import { ucFirst } from '../../state/utils'
 import { duckActions } from '../../state/ducks'
 import { uiActions } from '../../state/ducks/ui'
 
@@ -28,7 +28,7 @@ export class EditPage extends Component {
       <View>
         <EditPageHeader
           entity={entity}
-          title={ucFirst(entity)}
+          title={capitalize(entity)}
         />
         <EditForm />
       </View>

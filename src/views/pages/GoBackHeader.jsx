@@ -20,6 +20,7 @@ export class GoBackHeader extends Component {
 
   render () {
     const { leftComponent, ...rest } = this.props
+
     return (
       <Header
         leftComponent={{
