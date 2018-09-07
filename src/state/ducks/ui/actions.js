@@ -2,7 +2,7 @@ import cuid from 'cuid'
 
 export const create = (entityName, params) => (dispatch, getState) => {
   dispatch({
-    type: `ui/${entityName}/CREATE`,
+    type: `ui/editing/CREATE`,
     payload: {
       id: cuid(),
       ...params
@@ -12,7 +12,10 @@ export const create = (entityName, params) => (dispatch, getState) => {
 
 export const set = (entityName, entity) => (dispatch, getState) => {
   dispatch({
-    type: `ui/${entityName}/SET`,
-    payload: entity
+    type: `ui/editing/SET`,
+    payload: {
+      entityName,
+      entity
+    }
   })
 }
