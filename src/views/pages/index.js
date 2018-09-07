@@ -1,4 +1,5 @@
 export { default as AddButton } from './AddButton'
+export { default as EditForm } from './EditForm'
 export { default as EditPage } from './EditPage'
 export { default as EditPageHeader } from './EditPageHeader'
 export { default as GoBackHeader } from './GoBackHeader'

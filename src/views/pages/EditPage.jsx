@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Route } from 'react-router'
-import { EditPageHeader, SemesterForm, SubjectForm, MainView as View } from '.'
+import { EditPageHeader, EditForm, MainView as View } from '.'
 import { ucFirst } from '../../state/utils'
 import { duckActions } from '../../state/ducks'
 import { uiActions } from '../../state/ducks/ui'
@@ -31,8 +30,7 @@ export class EditPage extends Component {
           entity={entity}
           title={ucFirst(entity)}
         />
-        <Route path='/semester/:action' component={SemesterForm} />
-        <Route path='/subject/:action' component={SubjectForm} />
+        <EditForm />
       </View>
     )
   }
