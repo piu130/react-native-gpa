@@ -10,7 +10,6 @@ export class SemestersListItem extends Component {
 
     return (
       <ListItem
-        subtitle='subtitle'
         title={name}
         onLongPress={() => push(`/semester/edit/${id}`)}
         onPress={() => push(`/subjects/${id}`)}
