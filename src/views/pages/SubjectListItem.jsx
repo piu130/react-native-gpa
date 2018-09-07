@@ -12,7 +12,6 @@ export class SubjectListItem extends Component {
       <ListItem
         title={name}
         onLongPress={() => push(`/subject/edit/${id}`)}
-        // onPress={() => push(`/subjects/${id}`)}
       />
     )
   }

@@ -40,9 +40,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   })
 }
 
-// const mapDispatchToProps = {
-//   save: duckActions.saveSemester,
-//   goBack
-// }
-
 export default connect(mapStateToProps, mapDispatchToProps)(EditPageHeader)

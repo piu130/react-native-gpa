@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { ListItem } from 'react-native-elements'
 import { push } from 'connected-react-router'
 
-export class SemestersList extends Component {
+export class SemestersListItem extends Component {
   render () {
     const { item, push } = this.props
     const { id, name } = item
@@ -24,4 +24,4 @@ const mapDispatchToProps = {
   push
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SemestersList)
+export default connect(mapStateToProps, mapDispatchToProps)(SemestersListItem)

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Header } from 'react-native-elements'
 import { goBack } from 'connected-react-router'
 
-export class SemestersPageHeader extends Component {
+export class GoBackHeader extends Component {
   componentDidMount () {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress)
   }
@@ -39,4 +39,4 @@ const mapDispatchToProps = {
   goBack
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SemestersPageHeader)
+export default connect(mapStateToProps, mapDispatchToProps)(GoBackHeader)
