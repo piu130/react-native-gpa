@@ -1,3 +1,3 @@
-const PREFIX = 'entities/subjects/'
+const PREFIX = 'entities/Subject/'
 
 export const UPSERT = `${PREFIX}UPSERT`
