@@ -7,7 +7,8 @@ const paramsForwarder = (state, props) => props
 
 const functions = {
   semesters: session => session.Semester.all().toModelArray(),
-  subjects: (session, { id }) => session.Semester.withId(id).subjects.toModelArray()
+  subjects: (session, { id }) => session.Semester.withId(id).subjects.toModelArray(),
+  tests: (session, { id }) => session.Subject.withId(id).tests.toModelArray()
 }
 
 export const entities = createSelector(
