@@ -12,7 +12,7 @@ export class EditPage extends Component {
     const { action, id } = match.params
     switch (action) {
       case 'create':
-        create(id ? { parentId: id } : undefined)
+        create(id ? { parentId: id } : {})
         break
       case 'edit':
         load(id)
@@ -41,7 +41,7 @@ const mapStateToProps = (state) => ({})
 const mapDispatchToProps = (dispatch, ownProps) => {
   const entityName = ownProps.match.params.entity
   return ({
-    create: params => dispatch(editing.actions.create(params)),
+    create: ({ parentId }) => dispatch(editing.actions.create(parentId)),
     load: id => dispatch(duckActions.load(entityName, id))
   })
 }

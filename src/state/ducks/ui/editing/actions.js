@@ -1,11 +1,11 @@
 import { CREATE, SET, REMOVE, CHANGE_PROPERTY } from './types'
 import cuid from 'cuid'
 
-export const create = parentId => ({
+export const create = (parentId = null) => ({
   type: CREATE,
   payload: {
     id: cuid(),
-    parentId
+    ...parentId ? { parentId } : {}
   }
 })
 
