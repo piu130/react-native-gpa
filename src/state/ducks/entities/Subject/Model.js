@@ -11,8 +11,8 @@ export default class Subject extends Model {
   }
 
   static reducer ({ type, payload }, Subject, session) {
-    if (!payload) return undefined
-    const { parentId, ...subject } = payload
+    const { parentId, ...subject } = payload || {}
+
     switch (type) {
       case UPSERT:
         Subject.upsert({ semester: parentId, ...subject })
