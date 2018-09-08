@@ -1,34 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Input } from 'react-native-elements'
-import { editing as uiEditing } from '../../state/ducks/ui'
+import { View } from 'react-native-web'
+import { TextField } from '.'
 
 export class TestForm extends Component {
-  onChangeName = text => {
-    const { changeProperty } = this.props
-    changeProperty('name', text)
-  }
-
   render () {
-    const { editing } = this.props
-
     return (
-      <Input
-        autoFocus
-        placeholder='name'
-        value={editing.name || ''}
-        onChangeText={this.onChangeName}
-      />
+      <View>
+        <TextField
+          autoFocus
+          fieldName='name'
+        />
+      </View>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  editing: uiEditing.selectors.get(state)
-})
+const mapStateToProps = (state) => ({})
 
-const mapDispatchToProps = {
-  changeProperty: uiEditing.actions.changeProperty
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(TestForm)
