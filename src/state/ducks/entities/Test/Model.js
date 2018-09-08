@@ -15,7 +15,7 @@ export default class Test extends Model {
 
     switch (type) {
       case UPSERT:
-        Test.upsert({ semester: parentId, ...test })
+        Test.upsert({ subject: parentId, ...test })
         break
     }
     return undefined
