@@ -4,14 +4,17 @@ import { Icon } from 'react-native-elements'
 import { push } from 'connected-react-router'
 
 export class AddButton extends Component {
-  render () {
+  onClick = () => {
     const { push, path } = this.props
+    push(path)
+  }
 
+  render () {
     return (
       <Icon
         reverse
         name='add'
-        onPress={() => push(path)}
+        onPress={this.onClick}
         containerStyle={{ position: 'absolute', bottom: 10, right: 10 }}
       />
     )

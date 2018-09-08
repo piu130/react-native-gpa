@@ -5,8 +5,14 @@ import { GoBackHeader } from '.'
 import { duckActions } from '../../state/ducks'
 
 export class EditPageHeader extends Component {
+  onSave = () => {
+    const { save, goBack } = this.props
+    save()
+    goBack()
+  }
+
   render () {
-    const { save, goBack, entity } = this.props
+    const { entity } = this.props
     const title = entity[0].toUpperCase() + entity.slice(1)
 
     return (
@@ -19,10 +25,7 @@ export class EditPageHeader extends Component {
         }}
         rightComponent={{
           icon: 'done',
-          onPress: () => {
-            save()
-            goBack()
-          }
+          onPress: this.onSave
         }}
       />
     )

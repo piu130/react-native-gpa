@@ -4,15 +4,20 @@ import { Input } from 'react-native-elements'
 import { editing as uiEditing } from '../../state/ducks/ui'
 
 export class SubjectForm extends Component {
+  onChangeName = text => {
+    const { changeProperty } = this.props
+    changeProperty('name', text)
+  }
+
   render () {
-    const { editing, changeProperty } = this.props
+    const { editing } = this.props
 
     return (
       <Input
         autoFocus
         placeholder='name'
         value={editing.name || ''}
-        onChangeText={text => changeProperty('name', text)}
+        onChangeText={this.onChangeName}
       />
     )
   }

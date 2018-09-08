@@ -4,15 +4,27 @@ import { ListItem } from 'react-native-elements'
 import { push } from 'connected-react-router'
 
 export class SemestersListItem extends Component {
-  render () {
+  onEdit = () => {
     const { item, push } = this.props
-    const { id, name } = item
+    const { id } = item
+    push(`/semester/edit/${id}`)
+  }
+
+  onInspect = () => {
+    const { item, push } = this.props
+    const { id } = item
+    push(`/subjects/${id}`)
+  }
+
+  render () {
+    const { item } = this.props
+    const { name } = item
 
     return (
       <ListItem
         title={name}
-        onLongPress={() => push(`/semester/edit/${id}`)}
-        onPress={() => push(`/subjects/${id}`)}
+        onLongPress={this.onEdit}
+        onPress={this.onInspect}
       />
     )
   }
