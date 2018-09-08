@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router'
-import { SemesterForm, SubjectForm } from '.'
+import { SemesterForm, SubjectForm, TestForm } from '.'
 
 export class EditForm extends Component {
   render () {
@@ -9,6 +9,7 @@ export class EditForm extends Component {
       <Switch>
         <Route exact path='/semester/:action/:id?' render={() => <SemesterForm {...this.props} />} />
         <Route exact path='/subject/:action/:id?' render={() => <SubjectForm {...this.props} />} />
+        <Route exact path='/test/:action/:id?' render={() => <TestForm {...this.props} />} />
       </Switch>
     )
   }
