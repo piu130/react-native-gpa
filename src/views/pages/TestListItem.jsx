@@ -4,14 +4,21 @@ import { ListItem } from 'react-native-elements'
 import { push } from 'connected-react-router'
 
 export class TestListItem extends Component {
-  render () {
+  onPressEdit = () => {
     const { item, push } = this.props
-    const { id, name } = item
+    const { id } = item
+    push(`/test/edit/${id}`)
+  }
+
+  render () {
+    const { item } = this.props
+    const { name } = item
 
     return (
       <ListItem
         title={name}
-        onLongPress={() => push(`/test/edit/${id}`)}
+        onLongPress={this.onPressEdit}
+        onPress={this.onPressEdit}
       />
     )
   }
