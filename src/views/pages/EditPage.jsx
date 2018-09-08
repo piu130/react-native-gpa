@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import capitalize from 'capitalize'
 import { EditPageHeader, EditForm, MainView as View } from '.'
 import { duckActions } from '../../state/ducks'
-import { uiActions } from '../../state/ducks/ui'
+import { editing } from '../../state/ducks/ui'
 
 export class EditPage extends Component {
   constructor (props) {
@@ -41,7 +41,7 @@ const mapStateToProps = (state) => ({})
 const mapDispatchToProps = (dispatch, ownProps) => {
   const entityName = ownProps.match.params.entity
   return ({
-    create: params => dispatch(uiActions.create(entityName, params)),
+    create: params => dispatch(editing.actions.create(params)),
     load: id => dispatch(duckActions.load(entityName, id))
   })
 }
