@@ -7,6 +7,8 @@ export default class Test extends Model {
   static fields = {
     id: attr(),
     name: attr(),
+    mark: attr(),
+    weight: attr(),
     subject: fk('Subject', 'tests')
   }
 
