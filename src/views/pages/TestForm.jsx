@@ -11,6 +11,14 @@ export class TestForm extends Component {
           autoFocus
           fieldName='name'
         />
+        <TextField
+          fieldName='mark'
+          keyboardType='numeric'
+        />
+        <TextField
+          fieldName='weight'
+          keyboardType='numeric'
+        />
       </View>
     )
   }
