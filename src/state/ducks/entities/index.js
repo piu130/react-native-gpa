@@ -1,9 +1,9 @@
 import createReducer from './createReducer'
 import orm from './orm'
 
-import * as Semester from './Semester'
-import * as Subject from './Subject'
-import * as Test from './Test'
+import { default as Semester } from './Semester'
+import { default as Subject } from './Subject'
+import { default as Test } from './Test'
 import * as selectors from './selectors'
 
 export {
