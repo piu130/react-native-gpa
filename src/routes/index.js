@@ -1,6 +1,11 @@
-import { ListPage, EditPage } from '../views/pages'
+import { SettingsPage, ListPage, EditPage } from '../views/pages'
 
 export default [
+  {
+    path: '/settings',
+    component: SettingsPage,
+    exact: true
+  },
   {
     path: '/:entity([^/]+s)/:id?',
     component: ListPage,
