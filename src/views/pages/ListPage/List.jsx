@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { FlatList } from 'react-native-web'
+import { FlatList } from 'react-native'
 import { selectors } from '../../../state/ducks/entities'
 import { ListItem } from '.'
 

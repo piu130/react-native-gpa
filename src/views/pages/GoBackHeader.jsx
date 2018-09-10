@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BackHandler } from 'react-native-web'
+import { BackHandler } from 'react-native'
 import { connect } from 'react-redux'
 import { Header } from 'react-native-elements'
 import { goBack } from 'connected-react-router'

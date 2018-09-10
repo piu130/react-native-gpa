@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View } from 'react-native-web'
+import { View } from 'react-native'
 import { TextField } from '..'
 
 export class SemesterForm extends Component {
