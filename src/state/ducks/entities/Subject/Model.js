@@ -2,7 +2,7 @@ import { Model, attr, fk } from 'redux-orm'
 import { UPSERT } from './types'
 
 export default class Subject extends Model {
-  static modelName = 'Subject'
+  static modelName = Subject.name
 
   static fields = {
     id: attr(),

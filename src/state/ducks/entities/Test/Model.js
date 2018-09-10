@@ -2,7 +2,7 @@ import { Model, attr, fk } from 'redux-orm'
 import { UPSERT } from './types'
 
 export default class Test extends Model {
-  static modelName = 'Test'
+  static modelName = Test.name
 
   static fields = {
     id: attr(),
