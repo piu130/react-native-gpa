@@ -1,4 +1,4 @@
-import { createReducer } from 'redux-orm'
+import createReducer from './createReducer'
 import orm from './orm'
 
 import * as Semester from './Semester'

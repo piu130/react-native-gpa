@@ -1,7 +1,5 @@
 import { ORM } from 'redux-orm'
-import Semester from './Semester'
-import Subject from './Subject'
-import Test from './Test'
+import { Semester, Subject, Test } from './Models'
 
 const orm = new ORM()
 orm.register(
