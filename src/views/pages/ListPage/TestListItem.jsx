@@ -19,6 +19,7 @@ export class TestListItem extends Component {
         title={name}
         onLongPress={this.onPressEdit}
         onPress={this.onPressEdit}
+        badge={{ value: item.grade }}
       />
     )
   }
