@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { SettingsPageHeader, MainView as View } from '.'
+import { SettingsPageHeader } from '.'
+import { MainView as View } from '..'
 
 export class SettingsPage extends Component {
   render () {

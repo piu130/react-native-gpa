@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { GoBackHeader } from '.'
+import { GoBackHeader } from '..'
 
 export class SettingsPageHeader extends Component {
   render () {

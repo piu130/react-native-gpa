@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import capitalize from 'capitalize'
-import { EditPageHeader, EditForm, MainView as View } from '.'
-import { duckActions } from '../../state/ducks'
-import { editing } from '../../state/ducks/ui'
+import { MainView as View } from '..'
+import { EditPageHeader, EditForm } from '.'
+import { duckActions } from '../../../state/ducks'
+import { editing } from '../../../state/ducks/ui'
 
 export class EditPage extends Component {
   constructor (props) {

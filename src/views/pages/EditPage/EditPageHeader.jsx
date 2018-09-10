@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { goBack } from 'connected-react-router'
-import { GoBackHeader } from '.'
-import { duckActions } from '../../state/ducks'
+import { GoBackHeader } from '..'
+import { duckActions } from '../../../state/ducks'
 
 export class EditPageHeader extends Component {
   onSave = () => {

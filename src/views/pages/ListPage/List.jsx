@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { FlatList } from 'react-native-web'
-import { selectors } from '../../state/ducks/entities'
+import { selectors } from '../../../state/ducks/entities'
 import { ListItem } from '.'
 
 export class List extends Component {

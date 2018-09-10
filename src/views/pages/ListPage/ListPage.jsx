@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import capitalize from 'capitalize'
-import { List, ListPageHeader, AddButton, MainView as View } from '.'
+import { List, ListPageHeader } from '.'
+import { AddButton, MainView as View } from '..'
 
 export class ListPage extends Component {
   render () {
