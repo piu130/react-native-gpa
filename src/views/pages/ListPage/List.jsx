@@ -5,6 +5,8 @@ import { selectors } from '../../../state/ducks/entities'
 import { ListItem } from '.'
 
 export class List extends Component {
+  renderItem = ({ item }) => <ListItem item={item} />
+
   render () {
     const { items } = this.props
 
@@ -12,7 +14,7 @@ export class List extends Component {
       <FlatList
         data={Object.values(items)}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => <ListItem item={item} />}
+        renderItem={this.renderItem}
       />
     )
   }

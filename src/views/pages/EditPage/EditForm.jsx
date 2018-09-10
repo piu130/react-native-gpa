@@ -4,12 +4,16 @@ import { Route, Switch } from 'react-router'
 import { SemesterForm, SubjectForm, TestForm } from '.'
 
 export class EditForm extends Component {
+  renderSemesterForm = () => <SemesterForm {...this.props} />
+  renderSubjectForm = () => <SubjectForm {...this.props} />
+  renderTestForm = () => <TestForm {...this.props} />
+
   render () {
     return (
       <Switch>
-        <Route exact path='/semester/:action/:id?' render={() => <SemesterForm {...this.props} />} />
-        <Route exact path='/subject/:action/:id?' render={() => <SubjectForm {...this.props} />} />
-        <Route exact path='/test/:action/:id?' render={() => <TestForm {...this.props} />} />
+        <Route exact path='/semester/:action/:id?' render={this.renderSemesterForm} />
+        <Route exact path='/subject/:action/:id?' render={this.renderSubjectForm} />
+        <Route exact path='/test/:action/:id?' render={this.renderTestForm} />
       </Switch>
     )
   }
