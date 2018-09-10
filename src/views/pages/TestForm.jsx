@@ -12,7 +12,7 @@ export class TestForm extends Component {
           fieldName='name'
         />
         <TextField
-          fieldName='mark'
+          fieldName='grade'
           keyboardType='numeric'
         />
         <TextField
