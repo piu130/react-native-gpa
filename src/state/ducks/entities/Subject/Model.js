@@ -1,5 +1,6 @@
 import { Model, attr, fk } from 'redux-orm'
 import { UPSERT } from './types'
+import Semester from '../Semester'
 
 export default class Subject extends Model {
   static modelName = Subject.name
@@ -7,7 +8,7 @@ export default class Subject extends Model {
   static fields = {
     id: attr(),
     name: attr(),
-    semester: fk('Semester', 'subjects')
+    semester: fk(Semester.modelName, 'subjects')
   }
 
   static reducer ({ type, payload }, Subject, session) {
