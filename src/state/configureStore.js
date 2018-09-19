@@ -6,7 +6,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router'
 import createMiddleware from './middleware'
 import reducers from './ducks'
 
-export default () => {
+export default (initialState) => {
   const history = createBrowserHistory()
   const store = createStore(
     persistReducer(
@@ -18,7 +18,7 @@ export default () => {
       },
       connectRouter(history)(reducers)
     ),
-    undefined,
+    initialState,
     compose(applyMiddleware(...createMiddleware(), routerMiddleware(history)))
   )
 
