@@ -1,11 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
+import { createBrowserHistory } from 'history'
 import storage from 'redux-persist/es/storage'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 import createMiddleware from './middleware'
 import reducers from './ducks'
 
-export default ({ history }) => {
+export default () => {
+  const history = createBrowserHistory()
   const store = createStore(
     persistReducer(
       {
@@ -23,5 +25,5 @@ export default ({ history }) => {
   const persistor = persistStore(store)
 
   // persistor.purge()
-  return { persistor, store }
+  return { persistor, store, history }
 }

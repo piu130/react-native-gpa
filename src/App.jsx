@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { Provider } from 'react-redux'
-import { createBrowserHistory } from 'history'
 import { ConnectedRouter } from 'connected-react-router'
 import { Route, Switch, Redirect } from 'react-router'
 import { configure } from './config'
@@ -11,8 +10,7 @@ import './App.css'
 
 configure()
 
-const history = createBrowserHistory()
-const { persistor, store } = configureStore({ history })
+const { persistor, store, history } = configureStore()
 
 export default class App extends Component {
   render () {
