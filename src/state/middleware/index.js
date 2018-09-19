@@ -2,10 +2,11 @@ import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 
 export default () => {
-  const middleware = [
-    thunk,
-    logger
+  const middlewares = [
+    thunk
   ]
-  // if (__DEV__) middleware.push(logger)
-  return middleware
+  if (process.env.NODE_ENV === 'development') {
+    middlewares.push(logger)
+  }
+  return middlewares
 }
