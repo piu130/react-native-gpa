@@ -1,6 +1,6 @@
 const { join } = require('path');
 
-const nodeModulesDir = join(__dirname, 'node_modules')
+const nodeModulesDir = join(process.cwd(), 'node_modules')
 
 module.exports = {
   use: [

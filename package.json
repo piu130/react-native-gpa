@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "neutrino build",
-    "start": "neutrino start",
-    "lint": "neutrino lint",
-    "lint:fix": "neutrino lint --fix",
-    "test": "neutrino test"
+    "build": "neutrino build --use web/.neutrinorc.js",
+    "start": "neutrino start --use web/.neutrinorc.js",
+    "lint": "neutrino lint --use web/.neutrinorc.js",
+    "lint:fix": "neutrino lint --fix --use web/.neutrinorc.js",
+    "test": "neutrino test --use web/.neutrinorc.js"
   },
   "dependencies": {
     "capitalize": "^1.0.0",
@@ -20,7 +20,7 @@
     "react-art": "~16.3.2",
     "react-dom": "~16.3.2",
     "react-hot-loader": "^4.3.5",
-    "react-native-elements": "1.0.0-beta5",
+    "react-native-elements": "^1.0.0-beta5",
     "react-native-vector-icons": "^5.0.0",
     "react-native-web": "^0.8.9",
     "react-redux": "^5.0.7",
