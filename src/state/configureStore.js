@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import { createBrowserHistory } from 'history'
 import storage from 'redux-persist/es/storage'
@@ -16,7 +16,10 @@ export default (initialState) => {
         version: 1,
         blacklist: ['ui']
       },
-      connectRouter(history)(reducers)
+      combineReducers({
+        router: connectRouter(history),
+        ...reducers
+      })
     ),
     initialState,
     compose(applyMiddleware(...createMiddleware(), routerMiddleware(history)))
